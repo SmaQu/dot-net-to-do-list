@@ -1,0 +1,4 @@
+﻿CREATE TABLE [dbo].[Task]
+(
+	[TaskID] INT NOT NULL PRIMARY KEY
+)
