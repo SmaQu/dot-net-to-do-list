@@ -40,6 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Status.cs" />
+    <Compile Include="Entities\Task.cs" />
+    <Compile Include="Entities\User.cs" />
     <Compile Include="PagedDataRequest.cs" />
     <Compile Include="Entities\IVersionedEntity.cs" />
     <Compile Include="Exceptions\ChildObjectNotFoundException.cs" />
