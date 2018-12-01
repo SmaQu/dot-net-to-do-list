@@ -5,4 +5,4 @@
 	[Ordinal] INT NOT NULL,
 	[ts] ROWVERSION NOT NULL,
 	PRIMARY KEY CLUSTERED ([StatusId] ASC)
-)
+);

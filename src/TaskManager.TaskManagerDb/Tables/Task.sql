@@ -1,4 +1,15 @@
 ﻿CREATE TABLE [dbo].[Task]
 (
-	[TaskID] INT NOT NULL PRIMARY KEY
-)
+	[TaskId] BIGINT IDENTITY(1,1) NOT NULL, 
+	[Subject] NVARCHAR(100) NOT NULL,
+	[StartDate] DATETIME2 NULL,
+	[DueDate] DATETIME2 NULL,
+	[CompletionDate] DATETIME2 NULL,
+	[StatusId] BIGINT NOT NULL,
+	[CreatedDate] DATETIME2 NOT NULL,
+	[CreatedUserId] BIGINT NOT NULL,
+    [ts] ROWVERSION NOT NULL
+	PRIMARY KEY CLUSTERED ([TaskId] ASC),
+	FOREIGN KEY ([StatusId]) REFERENCES [dbo].[Status] ([StatusId]),
+	FOREIGN KEY ([CreatedUserId]) REFERENCES [dbo].[User] ([UserId])
+);

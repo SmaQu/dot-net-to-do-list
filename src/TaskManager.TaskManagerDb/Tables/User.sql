@@ -8,4 +8,4 @@
 	[Email] NVARCHAR(50) NOT NULL,
 	[ts] ROWVERSION NOT NULL,
 	CONSTRAINT [PK_User] PRIMARY KEY ([UserId])
-)
+);
