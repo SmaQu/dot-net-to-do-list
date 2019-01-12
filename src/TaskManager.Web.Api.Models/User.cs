@@ -13,7 +13,7 @@ namespace TaskManager.Web.Api.Models
 		private bool _shouldSerialieRoles;
 
 		[Key]
-		public long? UsesrId { get; set; }
+		public long? UserId { get; set; }
 
 		[Editable(true)]
 		public string Login { get; set; }

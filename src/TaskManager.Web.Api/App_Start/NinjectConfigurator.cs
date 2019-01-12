@@ -17,6 +17,8 @@ using TaskManager.Web.Api.Security;
 using TaskManager.Web.Common;
 using TaskManager.Web.Common.Security;
 using TaskManager.Web.Api.AutoMappingConfiguration;
+using TaskManager.Data.SqlServer.QueryProcessors;
+using TaskManager.Data.QueryProcessors;
 
 namespace TaskManager.Web.Api.App_Start
 {
@@ -39,6 +41,8 @@ namespace TaskManager.Web.Api.App_Start
             container.Bind<IUpdateablePropertyDetector>().To<JObjectUpdateablePropertyDetector>().InSingletonScope();
             container.Bind<IPagedDataRequestFactory>().To<PagedDataRequestFactory>().InSingletonScope();
             container.Bind<ICommonLinkService>().To<CommonLinkService>().InRequestScope();
+			container.Bind<ITaskByIdInquiryProcessor>().To<TaskByIdInquiryProcessor>().InRequestScope();
+			container.Bind<ITaskByIdQueryProcessor>().To<TaskByIdQueryProcessor>().InRequestScope();
         }
 
         private void ConfigureLog4net(IKernel container)
