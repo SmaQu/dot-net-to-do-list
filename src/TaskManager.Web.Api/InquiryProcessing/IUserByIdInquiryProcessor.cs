@@ -2,7 +2,7 @@
 
 namespace TaskManager.Web.Api.InquiryProcessing
 {
-	interface IUserByIdInquiryProcessor
+	public interface IUserByIdInquiryProcessor
 	{
 		User GetUserById(long userId);
 	}

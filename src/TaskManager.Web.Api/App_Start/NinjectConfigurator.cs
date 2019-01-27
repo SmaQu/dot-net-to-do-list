@@ -43,6 +43,8 @@ namespace TaskManager.Web.Api.App_Start
             container.Bind<ICommonLinkService>().To<CommonLinkService>().InRequestScope();
 			container.Bind<ITaskByIdInquiryProcessor>().To<TaskByIdInquiryProcessor>().InRequestScope();
 			container.Bind<ITaskByIdQueryProcessor>().To<TaskByIdQueryProcessor>().InRequestScope();
+			container.Bind<IUserByIdInquiryProcessor>().To<UserByIdInquiryProcessor>().InRequestScope();
+			container.Bind<IUserByIdQueryProcessor>().To<UserByIdQueryProcessor>().InRequestScope();
         }
 
         private void ConfigureLog4net(IKernel container)

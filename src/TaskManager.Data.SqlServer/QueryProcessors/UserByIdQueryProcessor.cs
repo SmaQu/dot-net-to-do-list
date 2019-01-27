@@ -8,7 +8,7 @@ using TaskManager.Data.QueryProcessors;
 
 namespace TaskManager.Data.SqlServer.QueryProcessors
 {
-	class UserByIdQueryProcessor : IUserByIdQueryProcessor
+	public class UserByIdQueryProcessor : IUserByIdQueryProcessor
 	{
 		private readonly ISession _session;
 

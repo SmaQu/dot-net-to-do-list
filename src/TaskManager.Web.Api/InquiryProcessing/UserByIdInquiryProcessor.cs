@@ -8,11 +8,25 @@ namespace TaskManager.Web.Api.InquiryProcessing
 	public class UserByIdInquiryProcessor : IUserByIdInquiryProcessor
 	{
 		private readonly IAutoMapper _autoMapper;
-		private readonly ITaskByIdQueryProcessor _queryProcessor;
+		private readonly IUserByIdQueryProcessor _queryProcessor;
+
+		public UserByIdInquiryProcessor(IUserByIdQueryProcessor queryProcessor, IAutoMapper autoMapper)
+		{
+			_queryProcessor = queryProcessor;
+			_autoMapper = autoMapper;
+		}
 
 		public User GetUserById(long userId)
 		{
-			throw new System.NotImplementedException();
+			var userEntity = _queryProcessor.GetUserById(userId);
+
+			if (userEntity == null)
+			{
+				throw new RootObjectNotFoundException("User not found");
+			}
+
+			var user = _autoMapper.Map<User>(userEntity);
+			return user;
 		}
 	}
 }
